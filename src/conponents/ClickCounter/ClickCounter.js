@@ -1,6 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import style from './style.less'
 
 class ClickCounter extends React.Component {
   state={
