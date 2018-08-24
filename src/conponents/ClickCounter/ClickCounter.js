@@ -1,4 +1,5 @@
 import React from 'react'
+import style from './style.less'
 
 class ClickCounter extends React.Component {
   state={
@@ -15,13 +16,11 @@ class ClickCounter extends React.Component {
     })
   }
   render() {
-    const counterStyle = {
-      color:'orange'
-    }
+   
     return (
-      <div style={counterStyle}>
-        <button onClick={this.clickCoout}>clickme +</button>
-        <button onClick={this.clickCooutjian}>clickme -</button>
+      <div className ={style.dataTime}>
+        <button onClick={this.clickCoout} className={style.timeUp}> + </button>
+        <button onClick={this.clickCooutjian} className={style.timeDown}> - </button>
         <span>今天是7. {this.state.coout} 日</span>
       </div>
     )
