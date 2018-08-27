@@ -75,7 +75,7 @@ export default class PostItem extends Component {
         <div className={styles.title}>
           {this.state.editing ? (
             <form>
-              <textarea value={post.title} onChange={this.handleTitleChange} />
+              <input value={post.title} onChange={this.handleTitleChange} />
             </form>
           ) : (
             post.title
