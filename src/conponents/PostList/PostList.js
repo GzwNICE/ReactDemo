@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import PostItem from '../PostItem/PostItem'
+import Modal from '../Modal/Modal'
 import styles from './style.less'
 
 class PlostList extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      posts: []
+      posts: [],
+      showModal :false 
     }
     this.timer = null //定时器
     this.handleVote = this.handleVote.bind(this) //手动绑定this指向
@@ -70,6 +72,19 @@ class PlostList extends Component {
       posts
     })
   }
+
+  openModal = ()=>{
+    this.setState({
+      showModal: true
+    })
+  }
+  
+  closeModal = ()=>{
+    this.setState({
+      showModal: false
+    })
+  }
+  
   render() {
     return (
       <div className={styles.container}>
@@ -84,6 +99,12 @@ class PlostList extends Component {
             />
           ))}
         </ul>
+        <div onClick={this.openModal} className={styles.openModal}>全局弹框</div>
+        <div>
+          {this.state.showModal && (
+            <Modal onClose={this.closeModal}></Modal>
+          )}
+        </div>
       </div>
     )
   }

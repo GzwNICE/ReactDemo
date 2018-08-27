@@ -1,22 +1,27 @@
 import React, { Component } from 'react';
-import logo from '../../logo.svg';
 import './App.css';
-import Click from '../ClickCounter/ClickCounter';
+import Modal from '../Modal/Modal'
 
 class App extends Component {
+  constructor (props){
+    super(props);
+    this.state = { showModal :true };
+  }
+  closeModal = ()=>{
+    this.setState({
+      showModal: false
+    })
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          第一个组件实现了加减
-        </p>
-        <Click />
+      <div>
+        <h2>全局弹框</h2>
+        {this.state.showModal && (
+          <Modal onClose = {this.closeModal}></Modal>
+        )}
       </div>
-    );
+    )
   }
 }
 
