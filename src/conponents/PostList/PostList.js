@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PostItem from '../PostItem/PostItem'
+import styles from './style.less'
 
 class PlostList extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class PlostList extends Component {
     }
     this.timer = null //定时器
     this.handleVote = this.handleVote.bind(this) //手动绑定this指向
+    this.handleSave = this.handleSave.bind(this) //手动绑定this指向
   }
   componentDidMount() {
     //挂载后 模拟数据
@@ -18,21 +20,21 @@ class PlostList extends Component {
           {
             id: 1,
             title: '大家一起来讨论react吧',
-            author: '张三',
+            author: '阿康',
             date: '2018-08-27 11:14',
             vote: 0
           },
           {
             id: 2,
             title: '前端框架，你最喜欢哪一个',
-            author: '李四',
+            author: '阿杰',
             date: '2018-08-27 12:00',
             vote: 0
           },
           {
             id: 3,
             title: 'App的时代已经到来',
-            author: '王五',
+            author: '阿文',
             date: '2018-08-27 18:30',
             vote: 0
           }
@@ -58,13 +60,28 @@ class PlostList extends Component {
       posts
     })
   }
+
+  handleSave(post) {
+    const posts = this.state.posts.map(item => {
+      const newItem = item.id === post.id ? post : item
+      return newItem
+    })
+    this.setState({
+      posts
+    })
+  }
   render() {
     return (
-      <div>
-        帖子列表：
+      <div className={styles.container}>
+        <h2>技术改变世界</h2>
         <ul>
           {this.state.posts.map(item => (
-            <PostItem post={item} onVote={this.handleVote} />
+            <PostItem
+              key={item.id}
+              post={item}
+              onVote={this.handleVote}
+              onSave={this.handleSave}
+            />
           ))}
         </ul>
       </div>
