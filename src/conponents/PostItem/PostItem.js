@@ -1,16 +1,30 @@
-import React, { Component } from 'react'
+import React from 'react'
+import style from './style.less'
 
-class PostItem extends Component {
-  render(){
-    const { title, author, date } = this.props;
-    return (
-      <li>
-        <div>{title}</div>
-        <div>创建人：<span>{author}</span></div>
-        <div>创建时间：<span>{date}</span></div>
-      </li>
-    );
+function PostItem(props) {
+  const handleClick = () => {
+    props.onVote(props.post.id)
   }
+  const { post } = props
+  return (
+    <li>
+      <div>{post.title}</div>
+      <div>
+        创建人：
+        {post.author}
+      </div>
+      <div>
+        创建时间：
+        {post.date}
+      </div>
+      <div>
+        <button onClick={handleClick} style={style.voteBtn}>
+          点赞
+        </button>
+        &nbsp;
+        <span>{post.vote}</span>
+      </div>
+    </li>
+  )
 }
-export default PostItem;
-
+export default PostItem
