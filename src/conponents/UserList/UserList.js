@@ -66,7 +66,7 @@ export default class UserList extends Component {
         <input onChange={this.handleChangeAuthor} value={this.state.author} />
         <span>时间：</span><input onChange={this.handleChangeDate} value={this.state.date} />
         <span>点赞：</span><input onChange={this.handleChangeVote} value={this.state.vote} />
-        <button onClick={this.handleClick}>新增帖子</button>
+        <button onClick={this.handleClick}>发 布</button>
       </div>
     )
   }
