@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PostItem from '../PostItem/PostItem'
+import UserList from '../UserList/UserList'
 import Modal from '../Modal/Modal'
 import styles from './style.less'
 
@@ -8,11 +9,12 @@ class PlostList extends Component {
     super(props)
     this.state = {
       posts: [],
-      showModal :false 
+      showModal: false
     }
     this.timer = null //定时器
-    this.handleVote = this.handleVote.bind(this) //手动绑定this指向
-    this.handleSave = this.handleSave.bind(this) //手动绑定this指向
+    this.handleVote = this.handleVote.bind(this)
+    this.handleSave = this.handleSave.bind(this)
+    this.onAddUser = this.onAddUser.bind(this)
   }
   componentDidMount() {
     //挂载后 模拟数据
@@ -73,22 +75,28 @@ class PlostList extends Component {
     })
   }
 
-  openModal = ()=>{
+  onAddUser(uesr) {
+    this.setState({
+      posts: this.state.posts.concat(uesr)
+    })
+  }
+
+  openModal = () => {
     this.setState({
       showModal: true
     })
   }
-  
-  closeModal = ()=>{
+
+  closeModal = () => {
     this.setState({
       showModal: false
     })
   }
-  
+
   render() {
     return (
       <div className={styles.container}>
-        <h2>技术改变世界</h2>
+        <h2>帖子列表-技术改变世界</h2>
         <ul>
           {this.state.posts.map(item => (
             <PostItem
@@ -99,12 +107,11 @@ class PlostList extends Component {
             />
           ))}
         </ul>
-        <div onClick={this.openModal} className={styles.openModal}>全局弹框</div>
-        <div>
-          {this.state.showModal && (
-            <Modal onClose={this.closeModal}></Modal>
-          )}
+        <UserList  onAddUser={this.onAddUser} />
+        <div onClick={this.openModal} className={styles.openModal}>
+          全局弹框
         </div>
+        <div>{this.state.showModal && <Modal onClose={this.closeModal} />}</div>
       </div>
     )
   }
