@@ -14,6 +14,7 @@ export default class Modal extends Component {
 
   render() {
     return ReactDOM.createPortal (
+      // 全局弹窗
       <div className={styles.modal}>
         <span className={styles.close}  onClick={this.props.onClose}>&times;</span>
         <div className={styles.content}>

@@ -18,6 +18,7 @@ export default class UserList extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
+  // 优化
   handleChangeID(e) {
     this.setState({
       id: e.target.value
