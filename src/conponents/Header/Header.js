@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import styles from './style'
+import styles from './style.less'
 
 export default class Header extends Component {
   render() {

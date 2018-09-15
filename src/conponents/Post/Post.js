@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class PostList extends Component {
+export default class Post extends Component {
   render() {
     return (
       <div>
-        PostList
+        
       </div>
     )
   }
