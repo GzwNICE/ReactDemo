@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
-import asyncComponent from '../../AsyncComponent'
+// import asyncComponent from '../../AsyncComponent'
 import Header from '../Header/Header'
 import PostList from '../PostList/PostList'
 import Post from '../Post/Post'
@@ -15,8 +15,8 @@ export default class Home extends Component {
     this.handleLogout = this.handleLogout.bind(this)
   }
   handleLogout() {
-    sessionStorage.getItem('userId')
-    sessionStorage.getItem('username')
+    sessionStorage.removeItem("userId");
+    sessionStorage.removeItem("username");
     this.setState({
       userId: null,
       username: null
@@ -25,10 +25,11 @@ export default class Home extends Component {
 
   render() {
     const { match, location } = this.props
-    const { username } = this.state
+    const { userId , username } = this.state
     return (
       <div>
         <Header
+          userId = {userId}
           username={username}
           onLogout={this.handleLogout}
           location={location}
