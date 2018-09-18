@@ -1,3 +1,4 @@
+// 首页发帖组件
 import React, { Component } from 'react'
 import styles from './style.less'
 
@@ -6,39 +7,42 @@ export default class PostEditor extends Component {
     super(props)
     const { post } = this.props
     this.state = {
-      title: (post && post.title),
-      content: (post && post.content)
+      title: (post && post.title) || '',
+      content: (post && post.content) || ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleCancelClick = this.handleCancelClick.bind(this)
-    this.handleSaveClick= this.handleSaveClick.bind(this)
+    this.handleSaveClick = this.handleSaveClick.bind(this)
   }
 
-  handleChange(e){
+  handleChange(e) {
     const name = e.target.name
-    if( name === 'title') {
+    if (name === 'title') {
       this.setState({
-        title:e.target.value
+        title: e.target.value
       })
-    }else if (name === 'content'){
+    } else if (name === 'content') {
       this.setState({
-        content:e.target.value
+        content: e.target.value
       })
     }
   }
 
-  handleCancelClick(){
+  handleCancelClick() {
     this.props.onCancel()
   }
 
-  handleSaveClick(){
+  handleSaveClick() {
     const data = {
       title: this.state.title,
       content: this.state.content
-    };
+    }
+    if (data.title === '' || data.content === '') {
+      alert('标题或者内容不能为空！')
+      return
+    }
     this.props.onSave(data)
   }
-
 
   render() {
     return (

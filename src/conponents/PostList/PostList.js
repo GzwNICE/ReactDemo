@@ -1,3 +1,4 @@
+// 帖子列表（发帖+帖子列表）
 import React, { Component } from 'react'
 import { get, post } from '../../utils/request'
 import url from '../../utils/url'
@@ -33,7 +34,7 @@ export default class PostList extends Component {
       }
     })
   }
-
+  
   // 保存发帖，发送数据到后台，成功后请求数据列表作展示
   handleSave(data) {
     const postData = { ...data, author: this.props.userId, vote: 99 }
