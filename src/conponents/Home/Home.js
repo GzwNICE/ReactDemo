@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
-// import asyncComponent from '../../AsyncComponent'
+import asyncComponent from '../../AsyncComponent'
 import Header from '../Header/Header'
-import PostList from '../PostList/PostList'
-import Post from '../Post/Post'
+
+
+const AsyncPost = asyncComponent(() => import("../Post/Post"));
+const AsyncPostList = asyncComponent(() => import("../PostList/PostList"));
 
 export default class Home extends Component {
   constructor(props) {
@@ -37,11 +39,11 @@ export default class Home extends Component {
         <Route
           path={match.url}
           exact
-          render={props => <PostList username={username} {...props} />}
+          render={props => <AsyncPostList userId={userId} {...props} />}
         />
         <Route
           path={`${match.url}/:id`}
-          render={props => <Post username={username} {...props} />}
+          render={props => <AsyncPost userId={userId} {...props} />}
         />
       </div>
     )

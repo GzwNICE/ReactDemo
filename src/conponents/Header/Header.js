@@ -14,7 +14,7 @@ export default class Header extends Component {
           {username && username.length > 0 ? (
             <span className={styles.user}>
               当前用户：
-              {username}
+              <i>{username}</i>
               &nbsp;
               <button onClick={onLogout}>注销</button>
             </span>

@@ -64,7 +64,7 @@ export default class PostList extends Component {
       <div className={styles.postList}>
         <div className={styles.title}>
           <h2>话题列表</h2>
-          {userId ? <button onClick={this.handleNewPost}>发帖</button> : null}
+          {userId ? <button onClick={this.handleNewPost} className={styles.newPost}>发帖</button> : null}
         </div>
         {this.state.newPost ? (
           <PostEditor onSave={this.handleSave} onCancel={this.handleCancel} />
