@@ -7,7 +7,7 @@ export default class CommentsView extends Component {
     const { comments } = this.props
     return (
       <ul className={styles.commentsView}>
-        {comments.map(item=>{
+        {comments.map(item => {
           return (
             <li key={item.id}>
               <div>{item.content}</div>

@@ -12,16 +12,21 @@ export default class CommentList extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleChange(e){
+  handleChange(e) {
     this.setState({
       value: e.target.value
-    });
+    })
   }
 
-  handleClick(){
+  handleClick() {
     const content = this.state.value
-    if(content.length >  0){
-      
+    if (content.length > 0) {
+      this.props.onSubmit(this.state.value)
+      this.setState({
+        value: ''
+      })
+    } else {
+      alert('评论内容不能为空！')
     }
   }
 
@@ -40,7 +45,7 @@ export default class CommentList extends Component {
             <button onClick={this.handleClick}>提交</button>
           </div>
         ) : null}
-        <CommentsView  comments={comments} />
+        <CommentsView comments={comments} />
       </div>
     )
   }
