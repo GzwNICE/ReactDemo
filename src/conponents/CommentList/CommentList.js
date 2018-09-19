@@ -1,3 +1,4 @@
+// 帖子详情页面评论功能
 import React, { Component } from 'react'
 import CommentsView from '../CommentsView/CommentsView'
 import styles from './style.less'

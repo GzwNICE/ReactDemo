@@ -1,3 +1,4 @@
+// 帖子详情页评论内容列表
 import React, { Component } from 'react'
 import { getFormatDate } from '../../utils/date'
 import styles from './style.less'

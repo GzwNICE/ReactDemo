@@ -1,3 +1,4 @@
+// 根据帖子ID 进入帖子详情页面
 import React, { Component } from 'react'
 import PostEditor from '../PostEditor/PostEditor'
 import PostView from '../PostView/PostView'
