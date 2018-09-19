@@ -5,7 +5,6 @@ import CommentList from '../CommentList/CommentList'
 import { get, put, post } from '../../utils/request'
 import url from '../../utils/url'
 import styles from './style.less'
-import { getCurves } from 'crypto'
 
 export default class Post extends Component {
   constructor(props) {

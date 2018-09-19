@@ -1,7 +1,7 @@
-// 帖子详情页内容展示组件
+// 帖子详情页编辑帖子内容组件
 import React from 'react'
 import { getFormatDate } from '../../utils/date'
-import like from '../../imgs/like.png'
+import like from '../../imgs/like-default.png'
 import styles from './style.less'
 
 function PostView(props) {

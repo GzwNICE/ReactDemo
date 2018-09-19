@@ -2,7 +2,7 @@
 import React from 'react'
 import { getFormatDate } from '../../utils/date'
 import styles from './style.less'
-import like from '../../imgs/like.png'
+import like from '../../imgs/like-default.png'
 
 function PostItem(props) {
   const { post } = props
