@@ -37,7 +37,7 @@ export default class PostList extends Component {
   
   // 保存发帖，发送数据到后台，成功后请求数据列表作展示
   handleSave(data) {
-    const postData = { ...data, author: this.props.userId, vote: 1 }
+    const postData = { ...data, author: this.props.userId, vote: 0 }
     post(url.createPost(), postData).then(data => {
       if (!data.error) {
         this.refreshPostList()
