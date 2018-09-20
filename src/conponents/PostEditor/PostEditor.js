@@ -38,7 +38,7 @@ export default class PostEditor extends Component {
       content: this.state.content
     }
     if (data.title === '' || data.content === '') {
-      alert('标题或者内容不能为空！')
+      alert('标题或内容不能为空！')
       return
     }
     this.props.onSave(data)
