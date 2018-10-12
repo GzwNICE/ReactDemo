@@ -1,6 +1,8 @@
 // 首页发帖组件
 import React, { Component } from 'react'
+import { Input } from 'antd'
 import styles from './style.less'
+const { TextArea } = Input
 
 export default class PostEditor extends Component {
   constructor(props) {
@@ -54,7 +56,7 @@ export default class PostEditor extends Component {
           value={this.state.title}
           onChange={this.handleChange}
         />
-        <textarea
+        <TextArea
           name="content"
           placeholder="说点什么..."
           value={this.state.content}

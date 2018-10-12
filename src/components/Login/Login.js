@@ -57,7 +57,7 @@ export default class Login extends Component {
         this.setState({
           redircetToReferrer: true
         })
-        console.log('登录成功')
+        
       }
     })
   }

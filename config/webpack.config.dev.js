@@ -144,7 +144,12 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-              
+              plugins:[
+                [
+                  "import",
+                  { "libraryName": "antd", "libraryDirectory": "es", "style": true }
+                ]
+              ],
               // This is a feature of `babel-loader` for webpack (not Babel itself).
               // It enables caching results in ./node_modules/.cache/babel-loader/
               // directory for faster rebuilds.
@@ -188,7 +193,10 @@ module.exports = {
                 },
               },
               {
-                loader: require.resolve('less-loader') // compiles Less to CSS
+                loader: require.resolve('less-loader'), 
+                options: {
+                  javascriptEnabled: true
+                } // compiles Less to CSS
               }
             ],
           },

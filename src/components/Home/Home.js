@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
-import asyncComponent from '../../AsyncComponent'
 import Header from '../Header/Header'
-
-
-const AsyncPost = asyncComponent(() => import("../Post/Post"));
-const AsyncPostList = asyncComponent(() => import("../PostList/PostList"));
+import AsyncPost from "../Post/Post"
+import AsyncPostList from "../PostList/PostList"
 
 export default class Home extends Component {
   constructor(props) {

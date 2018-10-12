@@ -1,8 +1,10 @@
 // 帖子详情页编辑帖子内容组件
 import React from 'react'
 import { getFormatDate } from '../../utils/date'
+import { Button } from 'antd';
 import like from '../../imgs/like-default.png'
 import styles from './style.less'
+
 
 function PostView(props) {
   const { post, editable, onEditClick } = props
@@ -16,7 +18,7 @@ function PostView(props) {
           <span>{getFormatDate(post.updatedAt)}</span>
           {editable ? (
             <span>
-              ·<button onClick={onEditClick}>编辑</button>
+              ·<Button type="primary" onClick={onEditClick}>编辑</Button>
             </span>
           ) : null}
         </div>
