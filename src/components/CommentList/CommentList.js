@@ -1,6 +1,5 @@
 // 帖子详情页面评论功能
 import React, { Component } from 'react'
-import { DatePicker } from 'antd';
 import CommentsView from '../CommentsView/CommentsView'
 import styles from './style.less'
 
@@ -45,7 +44,6 @@ export default class CommentList extends Component {
               onChange={this.handleChange}
             />
             <button onClick={this.handleClick}>提交</button>
-            <DatePicker/>
           </div>
         ) : null}
         <CommentsView comments={comments} />
