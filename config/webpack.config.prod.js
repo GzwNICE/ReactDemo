@@ -149,7 +149,7 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-              
+              plugins:[['import', { libraryName: 'antd', style: true }]],
               compact: true,
             },
           },
@@ -207,7 +207,13 @@ module.exports = {
                       },
                     },
                     {
-                      loader: require.resolve('less-loader') // compiles Less to CSS
+                      loader: require.resolve('less-loader'), // compiles Less to CSS
+                      options: {
+                                                javascriptEnabled: true ,
+                                                modifyVars:{
+                                                    "primary-color":"#1DA57A"
+                                                }
+                                              }
                     }
                   ],
                 },

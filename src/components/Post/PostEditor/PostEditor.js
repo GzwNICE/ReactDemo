@@ -1,6 +1,6 @@
 // 首页发帖组件
 import React, { Component } from 'react'
-import { Input } from 'antd'
+import { Input, Button } from 'antd'
 import styles from './style.less'
 const { TextArea } = Input
 
@@ -62,8 +62,9 @@ export default class PostEditor extends Component {
           value={this.state.content}
           onChange={this.handleChange}
         />
-        <button onClick={this.handleCancelClick}>取消</button>
-        <button onClick={this.handleSaveClick}>保存</button>
+        <Button type="primary">Primary</Button>
+        <Button onClick={this.handleCancelClick}>取消</Button>
+        <Button onClick={this.handleSaveClick}>保存</Button>
       </div>
     )
   }
