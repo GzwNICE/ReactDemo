@@ -1,6 +1,6 @@
 // 帖子详情页评论内容列表
 import React, { Component } from 'react'
-import { getFormatDate } from '../../utils/date'
+import { getFormatDate } from '../../../utils/date'
 import styles from './style.less'
 
 export default class CommentsView extends Component {

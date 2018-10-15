@@ -1,8 +1,8 @@
 // 帖子详情页编辑帖子内容组件
 import React from 'react'
-import { getFormatDate } from '../../utils/date'
+import { getFormatDate } from '../../../utils/date'
 import { Button } from 'antd';
-import like from '../../imgs/like-default.png'
+import like from '../../../imgs/like-default.png'
 import styles from './style.less'
 
 

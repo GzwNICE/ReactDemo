@@ -2,8 +2,8 @@
 import React, { Component } from 'react'
 import { get, post } from '../../utils/request'
 import url from '../../utils/url'
-import PostsView from '../PostsView/PostsView'
-import PostEditor from '../PostEditor/PostEditor'
+import PostsView from './PostsView/PostsView'
+import PostEditor from '../Post/PostEditor/PostEditor'
 import styles from './style.less'
 
 export default class PostList extends Component {

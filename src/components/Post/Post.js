@@ -1,8 +1,8 @@
 // 根据帖子ID 进入帖子详情页面
 import React, { Component } from 'react'
-import PostEditor from '../PostEditor/PostEditor'
-import PostView from '../PostView/PostView'
-import CommentList from '../CommentList/CommentList'
+import PostEditor from './PostEditor/PostEditor'
+import PostView from './PostView/PostView'
+import CommentList from './CommentList/CommentList'
 import { get, put, post } from '../../utils/request'
 import url from '../../utils/url'
 import styles from './style.less'

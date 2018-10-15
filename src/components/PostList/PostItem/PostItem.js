@@ -1,8 +1,8 @@
 // 单条数据信息
 import React from 'react'
-import { getFormatDate } from '../../utils/date'
+import { getFormatDate } from '../../../utils/date'
 import styles from './style.less'
-import like from '../../imgs/like-default.png'
+import like from '../../../imgs/like-default.png'
 
 function PostItem(props) {
   const { post } = props
