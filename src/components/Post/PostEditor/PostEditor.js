@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { Input, Button } from 'antd'
 import styles from './style.less'
+import 'antd/lib/button/style';
 const { TextArea } = Input
 
 export default class PostEditor extends Component {
@@ -49,7 +50,7 @@ export default class PostEditor extends Component {
   render() {
     return (
       <div className={styles.postEditor}>
-        <input
+        <Input
           type="text"
           name="title"
           placeholder="标题"
@@ -62,9 +63,8 @@ export default class PostEditor extends Component {
           value={this.state.content}
           onChange={this.handleChange}
         />
-        <Button type="primary">Primary</Button>
         <Button onClick={this.handleCancelClick}>取消</Button>
-        <Button onClick={this.handleSaveClick}>保存</Button>
+        <Button onClick={this.handleSaveClick} type="primary">保存</Button>
       </div>
     )
   }

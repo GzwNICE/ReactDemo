@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { Button } from 'antd'
 import styles from './style.less'
 
 export default class Header extends Component {
@@ -16,7 +17,7 @@ export default class Header extends Component {
               当前用户：
               <i>{username}</i>
               &nbsp;
-              <button onClick={onLogout}>注销</button>
+              <Button type="danger" onClick={onLogout}>注销</Button>
             </span>
           ) : (
             <span className={styles.rightLink}>

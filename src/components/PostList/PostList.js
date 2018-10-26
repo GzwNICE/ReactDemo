@@ -1,6 +1,7 @@
 // 帖子列表（发帖+帖子列表）
 import React, { Component } from 'react'
 import { get, post } from '../../utils/request'
+import { Button } from 'antd'
 import url from '../../utils/url'
 import PostsView from './PostsView/PostsView'
 import PostEditor from '../Post/PostEditor/PostEditor'
@@ -65,7 +66,7 @@ export default class PostList extends Component {
       <div className={styles.postList}>
         <div className={styles.title}>
           <h2>话题列表</h2>
-          {userId ? <button onClick={this.handleNewPost} className={styles.newPost}>发帖</button> : null}
+          {userId ? <Button onClick={this.handleNewPost} className={styles.newPost} >发帖</Button> : null}
         </div>
         {this.state.newPost ? (
           <PostEditor onSave={this.handleSave} onCancel={this.handleCancel} />

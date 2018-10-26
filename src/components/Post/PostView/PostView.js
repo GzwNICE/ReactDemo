@@ -18,7 +18,7 @@ function PostView(props) {
           <span>{getFormatDate(post.updatedAt)}</span>
           {editable ? (
             <span>
-              ·<Button type="primary" onClick={onEditClick}>编辑</Button>
+              ·<Button onClick={onEditClick}>编辑</Button>
             </span>
           ) : null}
         </div>
